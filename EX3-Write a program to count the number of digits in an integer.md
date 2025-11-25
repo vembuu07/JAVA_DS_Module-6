@@ -1,50 +1,55 @@
-# EX3 Write a program to count the number of digits in an integer.
-## DATE:
+# Ex3
+## Write a program to count the number of digits in an integer.
+## DATE: 29-09-2025
 ## AIM:
-To write a java program to count the number of digits in an integer.
+To write a Java program to count the number of digits in an integer.
+
 ## Algorithm
 1. Start the program.
-2. Read an integer from the user.
-3. Define a recursive function countDigits() that counts digits by dividing the number by 10 each time.
-4. Base condition: if the number is 0, return 0.
-5. Recursive step: return 1 + countDigits(number / 10).
-6. Display the total count of digits.
+2. Declare an integer variable n and count = 0.
+3. Read the integer number n from the user.
+4. If n is 0, then the count of digits is 1.
+5. Otherwise, Repeat the steps while n is not equal to 0. Divide n by 10. Increment count by 1.
+6. Display the value of count.
 7. Stop the program.
-  
 
 ## Program:
-```
+```java
 /*
 Program to to count the number of digits in an integer
 Developed by: VEMBARASAN P
-RegisterNumber: 212223220123
+Register Number: 212223220123
 */
+
 import java.util.Scanner;
 
-public class CountDigitsRecursive {
-    static int countDigits(int n) {
-        if (n == 0)
-            return 0;
-        return 1 + countDigits(n / 10);
-    }
-
+public class CountDigits {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int num, count = 0;
+
         System.out.print("Enter an integer: ");
-        int n = sc.nextInt();
-        if (n == 0)
-            System.out.println("Number of digits: 1");
-        else
-            System.out.println("Number of digits: " + countDigits(Math.abs(n)));
+        num = sc.nextInt();
+
+        if (num == 0) {
+            count = 1;
+        } else {
+            while (num != 0) {
+                num = num / 10;
+                count++;
+            }
+        }
+
+        System.out.println("Number of digits: " + count);
         sc.close();
     }
 }
 ```
 
 ## Output:
+<img width="543" height="180" alt="image" src="https://github.com/user-attachments/assets/2e4cd75f-cb9c-461e-a79c-e7dec98ff288" />
 
 
-<img width="341" height="158" alt="Screenshot 2025-11-13 140952" src="https://github.com/user-attachments/assets/ce3a49e9-4f98-4b49-8aac-da86361752dc" />
 
 ## Result:
 Thus, the Java program to to count the number of digits in an integer is implemented successfully.
